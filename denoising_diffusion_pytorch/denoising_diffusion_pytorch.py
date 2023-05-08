@@ -837,9 +837,12 @@ class Trainer(object):
         split_batches = True,
         convert_image_to = None,
         calculate_fid = True,
-        inception_block_idx = 2048
+        inception_block_idx = 2048,
+        losses = []
     ):
         super().__init__()
+        
+        self.losses = []
 
         # accelerator
 
@@ -955,6 +958,9 @@ class Trainer(object):
         mu = torch.mean(features, dim = 0).cpu()
         sigma = torch.cov(features).cpu()
         return mu, sigma
+    
+    def get_losses(self):
+        return self.losses
 
     def fid_score(self, real_samples, fake_samples):
 
@@ -992,6 +998,7 @@ class Trainer(object):
 
                 accelerator.clip_grad_norm_(self.model.parameters(), 1.0)
                 pbar.set_description(f'loss: {total_loss:.4f}')
+                self.losses.append(total_loss)
 
                 accelerator.wait_for_everyone()
 
