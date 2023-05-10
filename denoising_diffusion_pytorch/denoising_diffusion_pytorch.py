@@ -743,7 +743,7 @@ class GaussianDiffusion(nn.Module):
 
         # if doing self-conditioning, 50% of the time, predict x_start from current set of times
         # and condition with unet with that
-        # this technique will slow down training by 25%, but seems to lower FID significantly
+        # this technique will slow down training by 25%, but seems to lower     ignificantly
 
         x_self_cond = None
         if self.self_condition and random() < 0.5:
@@ -979,6 +979,7 @@ class Trainer(object):
     def train(self):
         accelerator = self.accelerator
         device = accelerator.device
+        
 
         with tqdm(initial = self.step, total = self.train_num_steps, disable = not accelerator.is_main_process) as pbar:
 
