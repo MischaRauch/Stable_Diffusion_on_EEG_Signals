@@ -1,0 +1,36 @@
+{
+  "primary_key":"id",
+  "fields":{
+    "id": {
+       "type": "id",
+       "subtype": "integer"
+       },
+	   "f1": {
+       "type": "numerical",
+       "subtype": "float"
+     },
+    "f2": {
+            "type": "numerical",
+            "subtype": "float"
+            },
+    "f3": {
+            "type": "numerical",
+            "subtype": "float"
+            },"f4": {
+            "type": "numerical",
+            "subtype": "float"
+            },"f5": {
+            "type": "numerical",
+            "subtype": "float"
+            },"f6": {
+            "type": "numerical",
+            "subtype": "float"
+            },"f7": {
+            "type": "numerical",
+            "subtype": "float"
+            },"f8": {
+            "type": "numerical",
+            "subtype": "float"
+            }
+          }
+        }

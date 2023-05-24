@@ -1,3 +1,5 @@
+.dockerignore
+Dockerfile
 data/
 .DS_Store
 images/
